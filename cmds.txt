@@ -1,0 +1,22 @@
+Run SonarQube code tests against a Maven app
+
+Use SonarQube to test Java applications through Maven
+Clone spring-petclinic source code to your local filesystem
+Create a SonarQube project and generate a token
+Use Maven to execute a code scan
+Install SonarLint plugin to Eclipse IDE
+Bind SonarLint to the SonarQube Server
+
+docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+
+
+MyToken: 3ef161c166c1f09a0e047cecb55e1e7a800510fe
+
+mvn sonar:sonar -Dsonar.projectKey=PetClinic -Dsonar.host.url=http://localhost:9000 -Dsonar.login=3ef161c166c1f09a0e047cecb55e1e7a800510fe
+
+
+GIT:
+$ git remote rm origin
+$ git remote add origin git@github.com:aplikacjainfo/proj1.git
+$ git config master.remote origin
+$ git config master.merge refs/heads/master
